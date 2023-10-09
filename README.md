@@ -15,7 +15,7 @@ A converter that takes markdown files and converts it to production-ready HTML f
 
 ## Usage
 
-See the code: [css](https://github.com/codynhanpham/markdown-to-html/css/), [presets](https://github.com/codynhanpham/markdown-to-html/presets/), and [index.js](https://github.com/codynhanpham/markdown-to-html/index.js)
+See the code: [css](https://github.com/codynhanpham/markdown-to-html/tree/main/css/), [presets](https://github.com/codynhanpham/markdown-to-html/tree/main/presets/), and [index.js](https://github.com/codynhanpham/markdown-to-html/tree/main/index.js)
 
 It's for my personal webpage, though it's pretty straightforward to use. The default preset should work just fine for most cases.
 
@@ -25,7 +25,7 @@ Simply clone the repo, then `npm install` and `node . [files ...] [options]` to 
 
 #### `Options`:
 - `-p, --preset <preset>`: Use a preset. Default: `default`
-- `-c, --classmap <classmap>`: Use a classmap. Must be a JSON file. See [presets/classMap/resume.json](https://github.com/codynhanpham/markdown-to-html/presets/classMap/resume.json) for examples. Default: `default`
+- `-c, --classmap <classmap>`: Use a classmap. Must be a JSON file. See [presets/classMap/resume.json](https://github.com/codynhanpham/markdown-to-html/tree/main/presets/classMap/resume.json) for examples. Default: `default`
 
 #### Example:
 ```bash
