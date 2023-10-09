@@ -1,0 +1,28 @@
+{
+  "name": "md-renderer",
+  "version": "1.0.0",
+  "description": "Render md to a custom HTML page - @codynhanpham",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "markdown",
+    "md",
+    "render",
+    "html",
+    "pdf"
+  ],
+  "author": "Cody Nhan Pham",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "command-line-args": "^5.2.1",
+    "js-yaml": "^4.1.0",
+    "showdown": "^2.1.0",
+    "showdown-highlight": "^3.1.0"
+  }
+}

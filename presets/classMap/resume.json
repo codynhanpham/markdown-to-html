@@ -1,0 +1,14 @@
+{
+    "h1": "giant-text center no-border low-margin-bottom",
+    "h3": "regular-text italic low-margin-top",
+    "blockquote": "low-margin-top",
+    "blockquote p": "regular-text bold low-margin-top full-width list-row space-center gap-col-3",
+
+    "code": "regular-text",
+
+    "table": "full-width",
+    "tr": "list-row medium-text",
+    "th": "bold medium-text",
+
+    "ol": "list-row gap-col-2 gap-row-1"
+}

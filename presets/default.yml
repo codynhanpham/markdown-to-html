@@ -1,0 +1,6 @@
+class_map_dir: presets/classMap/default.json
+html_base: presets/html/default.html
+TITLE: Default
+DESCRIPTION: Welcome to @codynhanpham website! May you have a wonderful time browsing this site...
+IMAGE: 
+URL: https://codynhanpham.com/

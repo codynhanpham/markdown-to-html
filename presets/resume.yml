@@ -1,0 +1,6 @@
+class_map_dir: presets/classMap/resume.json
+html_base: presets/html/resume.html
+TITLE: Resume
+DESCRIPTION: On a more serious note, this is my resume, which includes some of the works I'm most proud of!
+IMAGE: https://raw.githubusercontent.com/codynhanpham/codynhanpham.github.io/main/resume/media/thumbnail.png
+URL: https://codynhanpham.com/resume/
