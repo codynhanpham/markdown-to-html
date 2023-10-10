@@ -255,3 +255,16 @@ ul {
 .space-center {
     justify-content: center;
 }
+
+.p-indent-0 {
+    text-indent: 0;
+}
+.p-indent-1 {
+    text-indent: calc(1.1 * var(--font-size));
+}
+.p-indent-2 {
+    text-indent: calc(2.2 * var(--font-size));
+}
+.p-indent-3 {
+    text-indent: calc(3.3 * var(--font-size));
+}
