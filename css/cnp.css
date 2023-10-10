@@ -268,3 +268,13 @@ ul {
 .p-indent-3 {
     text-indent: calc(3.3 * var(--font-size));
 }
+
+.force-align-left {
+    text-align: left !important;
+}
+.force-align-center {
+    text-align: center !important;
+}
+.force-align-right {
+    text-align: right !important;
+}
