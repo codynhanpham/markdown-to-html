@@ -17,7 +17,9 @@ showdown.setFlavor('github');
 const codeCSS = fs.readFileSync('./css/atom-one-dark.min.css', 'utf8');
 const baseCSS = fs.readFileSync('./css/cnp.css', 'utf8');
 
-const acceptedPresets = [ 'default', 'resume' ]; // Use for PresetOptions
+// Find in ./presets all files that end with .yml, use as available presets for PresetOptions
+const ymlPresets = fs.readdirSync('./presets').filter(file => file.endsWith('.yml'));
+const acceptedPresets = ymlPresets.map(file => file.split('.').slice(0, -1).join('.'));
 
 /**
  * @typedef {Object} FileDetails
