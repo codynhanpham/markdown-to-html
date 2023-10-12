@@ -1,29 +1,29 @@
-<!-- Generated on 2023-10-12, 07:26:37 --><!DOCTYPE html><html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head>
+<!-- Generated on 2023-10-12, 20:08:00 --><!DOCTYPE html><html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head>
     <meta charset="UTF-8">
     <meta lang="en">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Default</title>
-    <meta property="og:title" content="Default">
-    <meta name="description" content="Welcome to my website! May you have a wonderful time browsing this site...">
+    <title>md-to-html - @codynhanpham</title>
+    <meta property="og:title" content="md-to-html - @codynhanpham">
+    <meta name="description" content="A converter that takes markdown files and converts it to production-ready HTML for https://codynhanpham.com">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-    <meta property="og:image:secure" content="">
+    <meta property="og:url" content="https://codynhanpham.com/markdown-to-html/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/codynhanpham/markdown-to-html/main/thumbnail.png">
+    <meta property="og:image:secure" content="https://raw.githubusercontent.com/codynhanpham/markdown-to-html/main/thumbnail.png">
     <meta property="og:image:width" content="1200">
-    <meta property="og:description" content="Welcome to my website! May you have a wonderful time browsing this site...">
+    <meta property="og:description" content="A converter that takes markdown files and converts it to production-ready HTML for https://codynhanpham.com">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@username">
     <meta name="twitter:creator" content="@username">
-    <meta name="twitter:title" content="Default">
-    <meta name="twitter:description" content="Welcome to my website! May you have a wonderful time browsing this site...">
-    <meta name="twitter:image" content="">
+    <meta name="twitter:title" content="md-to-html - @codynhanpham">
+    <meta name="twitter:description" content="A converter that takes markdown files and converts it to production-ready HTML for https://codynhanpham.com">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/codynhanpham/markdown-to-html/main/thumbnail.png">
 
-    <meta name="author" content="">
+    <meta name="author" content="Cody Nhan Pham">
 
-    <link rel="canonical" href="">
+    <link rel="canonical" href="https://codynhanpham.com/markdown-to-html/">
     <link rel="icon" href="">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +39,7 @@ body {
     margin: calc(3.5 * var(--font-size)) 16vw;
     background-color: #1a1a1a;
     font-family: 'K2D', sans-serif;
-    color: rgba(255, 255, 255, 0.78);
+    color: rgb(205,205,205);
     scrollbar-gutter: stable both-edges;
 
     font-size: var(--font-size);
@@ -52,20 +52,20 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(49,49,49);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.35);
+    background: rgb(106,106,106);
     border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.55);
+    background: rgb(152,152,152);
 }
 
 ::-webkit-scrollbar-corner {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(49,49,49);
 }
 
 code {
@@ -106,14 +106,14 @@ a:hover:after {
 }
 
 h1 {
-    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 3px solid rgb(95,95,95);
     padding-bottom: 1rem;
 
     font-size: calc(2.2 * var(--font-size));
 }
 
 h2 {
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgb(72,72,72);
     padding-bottom: 0.8rem;
 
     font-size: calc(1.8 * var(--font-size));
@@ -122,6 +122,10 @@ h2 {
 ul {
     padding-left: calc(1.8 * var(--font-size));
 }
+
+
+
+/* Progress bar */
 
 
 @media screen and ((max-width < 900) or (orientation: portrait)) {
@@ -134,31 +138,35 @@ ul {
 
 
 
-/* Custom classes */</style><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{color:#abb2bf;background:#26292e}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-built_in,.hljs-class .hljs-title,.hljs-title.class_{color:#e6c07b}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}</style></head>
+/* Custom classes */
+
+/* Mod of table: Single header and Single Row --> Figure + Caption */
+/* Use [.figure] before table in .md file */</style><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{color:#abb2bf;background:#26292e}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-built_in,.hljs-class .hljs-title,.hljs-title.class_{color:#e6c07b}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}</style></head>
 <body>
     <h1 id="markdown-to-custom-html">Markdown to custom HTML</h1>
-<p>A converter that takes markdown files and converts it to production-ready HTML for <a href="https://codynhanpham.com">https://codynhanpham.com</a></p>
+<p>A converter that takes markdown files and converts it to production-ready HTML for <a href="https://codynhanpham.com" rel="noopener noreferrer" target="_blank">https://codynhanpham.com</a></p>
 <blockquote>
-  <p>→ A real world demo of this README.md itself: <a href="https://codynhanpham.com/markdown-to-html">https://codynhanpham.com/markdown-to-html</a></p>
+  <p>→ A real world demo of this README.md itself: <a href="https://codynhanpham.com/markdown-to-html" rel="noopener noreferrer" target="_blank">https://codynhanpham.com/markdown-to-html</a></p>
 </blockquote>
-<h4 id="back-to-github-httpsgithubcomcodynhanphammarkdown-to-html"><strong>Back to GitHub:</strong> <a href="https://github.com/codynhanpham/markdown-to-html">https://github.com/codynhanpham/markdown-to-html</a></h4>
+<h4 id="back-to-github-httpsgithubcomcodynhanphammarkdown-to-html"><strong>Back to GitHub:</strong> <a href="https://github.com/codynhanpham/markdown-to-html" rel="noopener noreferrer" target="_blank">https://github.com/codynhanpham/markdown-to-html</a></h4>
 <h2 id="features">Features</h2>
 <ul>
 <li>Support class mapping that can select specific elements down the tree</li>
+<li>Custom class can be specified in the markdown file for specific elements</li>
 <li>Code syntax highlighting</li>
 <li>Custom CSS styling (of course)</li>
 <li>Customizable HTML templates</li>
 <li>Customizable presets</li>
 </ul>
 <h2 id="usage">Usage</h2>
-<p>See the code: <a href="https://github.com/codynhanpham/markdown-to-html/tree/main/css/">css</a>, <a href="https://github.com/codynhanpham/markdown-to-html/tree/main/presets/">presets</a>, and <a href="https://github.com/codynhanpham/markdown-to-html/tree/main/index.js">index.js</a></p>
+<p>See the code: <a href="https://github.com/codynhanpham/markdown-to-html/tree/main/css/" rel="noopener noreferrer" target="_blank">css</a>, <a href="https://github.com/codynhanpham/markdown-to-html/tree/main/presets/" rel="noopener noreferrer" target="_blank">presets</a>, and <a href="https://github.com/codynhanpham/markdown-to-html/tree/main/index.js" rel="noopener noreferrer" target="_blank">index.js</a></p>
 <p>It's for my personal webpage, though it's pretty straightforward to use. The default preset should work just fine for most cases.</p>
 <p>Simply clone the repo, then <code>npm install</code> and <code>node . [files ...] [options]</code> to run the converter.</p>
 <h4 id="files-a-sequence-of-markdown-files-to-convert"><code>Files</code>: A sequence of markdown files to convert.</h4>
 <h4 id="options"><code>Options</code>:</h4>
 <ul>
-<li><code>-p, --preset &lt;preset&gt;</code>: Use a preset. Default: <code>default</code></li>
-<li><code>-c, --classmap &lt;classmap&gt;</code>: Use a classmap. Must be a JSON file. See <a href="https://github.com/codynhanpham/markdown-to-html/tree/main/presets/classMap/resume.json">presets/classMap/resume.json</a> for examples. Default: <code>default</code></li>
+<li><code>-p, --preset &lt;preset&gt;</code>: Use a preset. <strong><em>Default:</em></strong> <code>default</code></li>
+<li><code>-c, --classmap &lt;classmap&gt;</code>: Use a classmap. Must be a JSON file. If specified, this class map will override the class map in <code>preset</code>. See <a href="https://github.com/codynhanpham/markdown-to-html/tree/main/presets/classMap/resume.json" rel="noopener noreferrer" target="_blank">presets/classMap/resume.json</a> for examples. <strong><em>Default:</em></strong> <code>default</code> (blank)</li>
 </ul>
 <h4 id="example">Example:</h4>
 <pre class="bash language-bash"><code class="hljs bash language-bash">node . README.md -p default -c classmap.json</code></pre>

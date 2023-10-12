@@ -1,0 +1,248 @@
+<!-- Generated on 2023-10-12, 19:45:26 --><!DOCTYPE html><html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head>
+    <meta charset="UTF-8">
+    <meta lang="en">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Figure Demo - @codynhanpham</title>
+    <meta property="og:title" content="Figure Demo - @codynhanpham">
+    <meta name="description" content="A demonstration of rendering figure boxes using markdown table syntax. Markdown to HTML converter by @codynhanpham.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codynhanpham.com/markdown-to-html/demo/figure.html">
+    <meta property="og:image" content="https://raw.githubusercontent.com/codynhanpham/markdown-to-html/main/thumbnail.png">
+    <meta property="og:image:secure" content="https://raw.githubusercontent.com/codynhanpham/markdown-to-html/main/thumbnail.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:description" content="A demonstration of rendering figure boxes using markdown table syntax. Markdown to HTML converter by @codynhanpham.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@username">
+    <meta name="twitter:creator" content="@username">
+    <meta name="twitter:title" content="Figure Demo - @codynhanpham">
+    <meta name="twitter:description" content="A demonstration of rendering figure boxes using markdown table syntax. Markdown to HTML converter by @codynhanpham.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/codynhanpham/markdown-to-html/main/thumbnail.png">
+
+    <meta name="author" content="Cody Nhan Pham">
+
+    <link rel="canonical" href="https://codynhanpham.com/markdown-to-html/demo/figure.html">
+    <link rel="icon" href="">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></link>
+    <style>/* variables */
+/* font-size */
+:root {
+    --font-size: clamp(0.75rem, 0.5864rem + 0.9697vw, 1.75rem); /* 12px - 28px */
+}
+
+body {
+    margin: calc(3.5 * var(--font-size)) 16vw;
+    background-color: #1a1a1a;
+    font-family: 'K2D', sans-serif;
+    color: rgb(205,205,205);
+    scrollbar-gutter: stable both-edges;
+
+    font-size: var(--font-size);
+    line-height: calc(1.9 * var(--font-size));
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(49,49,49);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(106,106,106);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(152,152,152);
+}
+
+::-webkit-scrollbar-corner {
+    background: rgb(49,49,49);
+}
+
+code {
+    background-color: #424242;
+    border-radius: calc(0.4 * var(--font-size));
+    padding: calc(0.1 * var(--font-size)) calc(0.42 * var(--font-size));
+    margin: 0 calc(0.1 * var(--font-size));
+}
+
+/* underline animation left to right */
+
+img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+h1 {
+    border-bottom: 3px solid rgb(95,95,95);
+    padding-bottom: 1rem;
+
+    font-size: calc(2.2 * var(--font-size));
+}
+
+h2 {
+    border-bottom: 2px solid rgb(72,72,72);
+    padding-bottom: 0.8rem;
+
+    font-size: calc(1.8 * var(--font-size));
+}
+
+table {
+    width: 100%;
+
+    border: 1px solid rgb(72,72,72);
+    border-radius: calc(0.4 * var(--font-size));
+    border-spacing: 0;
+    overflow: hidden;
+}
+th, td {
+    text-align: left;
+    padding: calc(0.5 * var(--font-size)) calc(0.8 * var(--font-size));
+    border-bottom: 1px solid rgb(72,72,72);
+}
+th {
+    /* distictive background, extra size 1.2 * font */
+    background-color: rgb(52,52,52);
+    color: rgb(205,205,205);
+    font-size: calc(1.2 * var(--font-size));
+
+}
+tr:nth-child(even) {
+    background-color: rgb(34,34,34);
+}
+tr:hover {
+    background-color: rgb(72,72,72);
+}
+
+
+
+/* Progress bar */
+
+
+@media screen and ((max-width < 900) or (orientation: portrait)) {
+    body {
+        margin: calc(3.5 * var(--font-size)) calc(2 * var(--font-size) + 1.1vw);
+
+    }
+}
+
+
+
+
+/* Custom classes */
+
+.center {
+    text-align: center;
+}
+
+/* Mod of table: Single header and Single Row --> Figure + Caption */
+/* Use [.figure] before table in .md file */
+.figure {
+    width: 100%;
+    height: 100%;
+    min-height: 1px;
+    border: 1px solid rgb(72, 72, 72);
+    border-radius: calc(0.4 * var(--font-size));
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+.figure thead tr,
+.figure tbody tr {
+    padding: 0;
+    margin: 0;
+    height: 1px;
+}
+
+.figure thead tr th {
+    height: 100%;
+    padding: 0;
+}
+
+.figure tbody tr td {
+    margin: 0 calc(0.1 * var(--font-size));
+}
+
+.figure thead tr th img {
+    height: 100%;
+    display: block;
+    /* center */
+    margin-left: auto;
+    margin-right: auto;
+}</style><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{color:#abb2bf;background:#26292e}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-built_in,.hljs-class .hljs-title,.hljs-title.class_{color:#e6c07b}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}</style></head>
+<body>
+    <h1 id="a-figure-support-demo">A Figure Support Demo</h1>
+<p><strong><em>Just so that the figures are shown in relation to some text.</em></strong> Well, this is the only real text in this page. From here on out, enjoy some lorem ipsum stuff.</p>
+<p>Go to the <code>md</code> version of this file to see the syntax. How? Just replace the <code>.html</code> in the URL with <code>.md</code>.</p>
+<blockquote>
+  <p><strong>Scroll down for the figures!</strong></p>
+</blockquote>
+<h2 id="lorem-ipsum-dolor-sit-amet">Lorem Ipsum Dolor Sit Amet</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis tincidunt ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl. Sed euismod, nisl quis tincidunt ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl. Sed euismod, nisl quis tincidunt ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl. Sed euismod, nisl quis tincidunt ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl. Sed euismod, nisl quis tincidunt ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl.</p>
+<table class="figure">
+<thead>
+<tr>
+<th id="![full-width_or_large_image](assets/placeholder_img.png)" style="text-align:center;"><img src="assets/placeholder_img.png" alt="Full-width or large image"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><strong><em>Figure 1.</em></strong> Full-width image. Large image will automatically be fitted into the container.</td>
+</tr>
+</tbody>
+</table>
+<p>In hac habitasse platea dictumst. Sed euismod, nisl quis tincidunt ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl. Sed euismod, nisl quis tincidunt ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl. Sed euismod, nisl quis tincidunt ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl. Sed euismod, nisl quis tincidunt ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl.</p>
+<table class="figure">
+<thead>
+<tr>
+<th id="![small_image](assets/info128.png)" style="text-align:center;"><img src="assets/info128.png" alt="Small image"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><strong><em>Figure 2.</em></strong> Small image. Image will be centered, keeping its original size.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="consectetur-adipiscing-elit">Consectetur Adipiscing Elit</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl quis tincidunt ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl nec nisl.</p>
+<p class="center"><strong><em>Table 1.</em></strong> Tables are unaffected and can be used normally.</p>
+<table>
+<thead>
+<tr>
+<th id="tables" style="text-align:center;">Tables</th>
+<th id="are" style="text-align:center;">Are</th>
+<th id="of_course" style="text-align:center;">Of course</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">Unaffected</td>
+<td style="text-align:center;">And</td>
+<td style="text-align:center;">Can be used normally</td>
+</tr>
+<tr>
+<td style="text-align:center;">Living on the edge?</td>
+<td style="text-align:center;">Even this thing…</td>
+<td style="text-align:center;"><img src="assets/info128.png" alt="Small image" width="60em" height="auto"></td>
+</tr>
+<tr>
+<td style="text-align:center;">Images</td>
+<td style="text-align:center;">In tables</td>
+<td style="text-align:center;">Work too!</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+
+</body></html>

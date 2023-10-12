@@ -1,0 +1,292 @@
+<!-- Generated on 2023-10-12, 20:33:46 --><!DOCTYPE html><html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head>
+    <meta charset="UTF-8">
+    <meta lang="en">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo for md-to-html - @codynhanpham</title>
+    <meta property="og:title" content="Demo for md-to-html - @codynhanpham">
+    <meta name="description" content="A demonstration page for a converter that takes markdown files and converts it to production-ready HTML for https://codynhanpham.com">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codynhanpham.com/markdown-to-html/demo/README.html">
+    <meta property="og:image" content="https://raw.githubusercontent.com/codynhanpham/markdown-to-html/main/thumbnail.png">
+    <meta property="og:image:secure" content="https://raw.githubusercontent.com/codynhanpham/markdown-to-html/main/thumbnail.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:description" content="A demonstration page for a converter that takes markdown files and converts it to production-ready HTML for https://codynhanpham.com">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@username">
+    <meta name="twitter:creator" content="@username">
+    <meta name="twitter:title" content="Demo for md-to-html - @codynhanpham">
+    <meta name="twitter:description" content="A demonstration page for a converter that takes markdown files and converts it to production-ready HTML for https://codynhanpham.com">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/codynhanpham/markdown-to-html/main/thumbnail.png">
+
+    <meta name="author" content="Cody Nhan Pham">
+
+    <link rel="canonical" href="https://codynhanpham.com/markdown-to-html/demo/README.html">
+    <link rel="icon" href="">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></link>
+    <style>/* variables */
+/* font-size */
+:root {
+    --font-size: clamp(0.75rem, 0.5864rem + 0.9697vw, 1.75rem); /* 12px - 28px */
+}
+
+body {
+    margin: calc(3.5 * var(--font-size)) 16vw;
+    background-color: #1a1a1a;
+    font-family: 'K2D', sans-serif;
+    color: rgb(205,205,205);
+    scrollbar-gutter: stable both-edges;
+
+    font-size: var(--font-size);
+    line-height: calc(1.9 * var(--font-size));
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(49,49,49);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(106,106,106);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(152,152,152);
+}
+
+::-webkit-scrollbar-corner {
+    background: rgb(49,49,49);
+}
+
+code {
+    background-color: #424242;
+    border-radius: calc(0.4 * var(--font-size));
+    padding: calc(0.1 * var(--font-size)) calc(0.42 * var(--font-size));
+    margin: 0 calc(0.1 * var(--font-size));
+}
+
+a {
+    color: #9aafd6;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+a:hover {
+    color: #c5d4e6;
+}
+
+/* underline animation left to right */
+a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #9aafd6;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+h1 {
+    border-bottom: 3px solid rgb(95,95,95);
+    padding-bottom: 1rem;
+
+    font-size: calc(2.2 * var(--font-size));
+}
+
+h3 {
+    font-size: calc(1.5 * var(--font-size));
+}
+
+ul {
+    padding-left: calc(1.8 * var(--font-size));
+}
+
+table {
+    width: 100%;
+
+    border: 1px solid rgb(72,72,72);
+    border-radius: calc(0.4 * var(--font-size));
+    border-spacing: 0;
+    overflow: hidden;
+}
+th, td {
+    text-align: left;
+    padding: calc(0.5 * var(--font-size)) calc(0.8 * var(--font-size));
+    border-bottom: 1px solid rgb(72,72,72);
+}
+th {
+    /* distictive background, extra size 1.2 * font */
+    background-color: rgb(52,52,52);
+    color: rgb(205,205,205);
+    font-size: calc(1.2 * var(--font-size));
+
+}
+tr:nth-child(even) {
+    background-color: rgb(34,34,34);
+}
+tr:hover {
+    background-color: rgb(72,72,72);
+}
+
+
+
+/* Progress bar */
+
+
+@media screen and ((max-width < 900) or (orientation: portrait)) {
+    body {
+        margin: calc(3.5 * var(--font-size)) calc(2 * var(--font-size) + 1.1vw);
+
+    }
+}
+
+
+
+
+/* Custom classes */
+
+.center {
+    text-align: center;
+}
+
+.dim {
+    opacity: 0.7;
+}
+
+/* Mod of table: Single header and Single Row --> Figure + Caption */
+/* Use [.figure] before table in .md file */
+.figure {
+    width: 100%;
+    height: 100%;
+    min-height: 1px;
+    border: 1px solid rgb(72, 72, 72);
+    border-radius: calc(0.4 * var(--font-size));
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+.figure thead tr,
+.figure tbody tr {
+    padding: 0;
+    margin: 0;
+    height: 1px;
+}
+
+.figure thead tr th {
+    height: 100%;
+    padding: 0;
+}
+
+.figure tbody tr td {
+    margin: 0 calc(0.1 * var(--font-size));
+}
+
+.figure thead tr th img {
+    height: 100%;
+    display: block;
+    /* center */
+    margin-left: auto;
+    margin-right: auto;
+}</style><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{color:#abb2bf;background:#26292e}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-built_in,.hljs-class .hljs-title,.hljs-title.class_{color:#e6c07b}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}</style></head>
+<body>
+    <h1 id="a-list-of-some-demonstrations">A list of some demonstrations</h1>
+<p>Some pages in this list use some additional custom CSS and JS. This script can be extremely flexible if you spend some time to customize it ~</p>
+<ul>
+<li>This README.md itself: <a href="https://codynhanpham.com/markdown-to-html/demo/README.html" rel="noopener noreferrer" target="_blank">https://codynhanpham.com/markdown-to-html/demo/README.html</a></li>
+<li>A resume preset: <a href="https://codynhanpham.com/resume/index.md" rel="noopener noreferrer" target="_blank">Markdown</a> | <a href="https://codynhanpham.com/resume/" rel="noopener noreferrer" target="_blank">HTML</a></li>
+<li>A blog post: <a href="https://codynhanpham.com/blogs/iwannaburymypastself/if-care-equals-infinity/index.md" rel="noopener noreferrer" target="_blank">Markdown</a> | <a href="https://codynhanpham.com/blogs/iwannaburymypastself/if-care-equals-infinity/index.html" rel="noopener noreferrer" target="_blank">HTML</a></li>
+<li>Figure and Tables support: <a href="https://codynhanpham.com/markdown-to-html/demo/figure.md" rel="noopener noreferrer" target="_blank">Markdown</a> | <a href="https://codynhanpham.com/markdown-to-html/demo/figure.html" rel="noopener noreferrer" target="_blank">HTML</a></li>
+</ul>
+<p><br></p>
+<h1 id="some-highlights">Some highlights</h1>
+<h3 id="code-syntax-highlighting">Code syntax highlighting</h3>
+<p>An excerpt from this converter's own source code:</p>
+<pre class="js language-js"><code class="hljs js language-js"><span class="hljs-keyword">const</span> optionDefinitions = [
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'input'</span>, <span class="hljs-attr">alias</span>: <span class="hljs-string">'i'</span>, <span class="hljs-attr">type</span>: <span class="hljs-function"><span class="hljs-params">filename</span> =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileDetails</span>(filename, <span class="hljs-string">"md"</span>), <span class="hljs-attr">multiple</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">defaultOption</span>: <span class="hljs-literal">true</span> },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'preset'</span>, <span class="hljs-attr">alias</span>: <span class="hljs-string">'p'</span>, <span class="hljs-attr">type</span>: <span class="hljs-function"><span class="hljs-params">preset</span> =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PresetOptions</span>(preset), <span class="hljs-attr">defaultValue</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">PresetOptions</span>(<span class="hljs-string">"default"</span>) },
+    { <span class="hljs-attr">name</span>: <span class="hljs-string">'classmap'</span>, <span class="hljs-attr">alias</span>: <span class="hljs-string">'c'</span>, <span class="hljs-attr">type</span>: <span class="hljs-function"><span class="hljs-params">filename</span> =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FileDetails</span>(filename, <span class="hljs-string">"json"</span>) },
+]
+<span class="hljs-keyword">const</span> options = <span class="hljs-title function_">commandLineArgs</span>(optionDefinitions);</code></pre>
+<hr>
+<h3 id="custom-class-in-markdown">Custom class in markdown</h3>
+<pre class="markdown language-markdown"><code class="hljs markdown language-markdown">This is a normal paragraph.
+
+[.center]This paragraph will have the <span class="hljs-code">`center`</span> class and will be centered.
+[.dim]<span class="hljs-strong">**Only one special class at a time, though...**</span></code></pre>
+<p>This is a normal paragraph.</p>
+<p class="center">This paragraph will have the <code>center</code> class and will be centered.</p>
+<p class="dim"><strong>Only one special class at a time, though…</strong></p>
+<p>And because of this, for more complex styling, you can write a custom class map for the conversion. If you really really cannot make do with the custom class, you can always use inline HTML inside the markdown.</p>
+<hr>
+<h3 id="figure-can-be-styled-using-the-1x2-table-syntax">Figure can be styled using the 1x2 table syntax</h3>
+<pre class="markdown language-markdown"><code class="hljs markdown language-markdown">​[.figure]
+| ![<span class="hljs-string">Full-width or large image</span>](<span class="hljs-link">../thumbnail_2x.png</span>) |
+|:--:|
+| <span class="hljs-strong">**<span class="hljs-emphasis">*Figure 1.*</span>**</span> Full-width image. Large image will automatically be fitted into the container. |</code></pre>
+<table class="figure">
+<thead>
+<tr>
+<th id="![full-width_or_large_image](../thumbnail_2x.png)" style="text-align:center;"><img src="../thumbnail_2x.png" alt="Full-width or large image"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><strong><em>Figure 1.</em></strong> Full-width image. Large image will automatically be fitted into the container.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="without-the-custom-figure-class-tables-are-unaffected">Without the custom <code>.figure</code> class, tables are unaffected</h3>
+<pre class="markdown language-markdown"><code class="hljs markdown language-markdown">​[.center]<span class="hljs-strong">**<span class="hljs-emphasis">*Table 1.*</span>**</span> Tables are unaffected and can be used normally.
+
+| Header 1 | Header 2 | Header 3 |
+|:--:|:--:|:--:|
+| Unaffected | And | Can be used normally |
+| Some Data | Or whatever | Content here |</code></pre>
+<p class="center"><strong><em>Table 1.</em></strong> Tables are unaffected and can be used normally.</p>
+<table>
+<thead>
+<tr>
+<th id="header_1" style="text-align:center;">Header 1</th>
+<th id="header_2" style="text-align:center;">Header 2</th>
+<th id="header_3" style="text-align:center;">Header 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">Unaffected</td>
+<td style="text-align:center;">And</td>
+<td style="text-align:center;">Can be used normally</td>
+</tr>
+<tr>
+<td style="text-align:center;">Some Data</td>
+<td style="text-align:center;">Or whatever</td>
+<td style="text-align:center;">Content here</td>
+</tr>
+</tbody>
+</table>
+
+</body></html>
