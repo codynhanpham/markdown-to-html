@@ -124,7 +124,6 @@ table {
     border-radius: calc(0.4 * var(--font-size));
     border-spacing: 0;
     overflow: hidden;
-
 }
 th, td {
     text-align: left;
@@ -338,4 +337,40 @@ tr:hover {
 }
 .force-align-right {
     text-align: right !important;
+}
+
+/* Mod of table: Single header and Single Row --> Figure + Caption */
+/* Use [.figure] before table in .md file */
+.figure {
+    width: 100%;
+    height: 100%;
+    min-height: 1px;
+    border: 1px solid rgb(72, 72, 72);
+    border-radius: calc(0.4 * var(--font-size));
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+.figure thead tr,
+.figure tbody tr {
+    padding: 0;
+    margin: 0;
+    height: 1px;
+}
+
+.figure thead tr th {
+    height: 100%;
+    padding: 0;
+}
+
+.figure tbody tr td {
+    margin: 0 calc(0.1 * var(--font-size));
+}
+
+.figure thead tr th img {
+    height: 100%;
+    display: block;
+    /* center */
+    margin-left: auto;
+    margin-right: auto;
 }

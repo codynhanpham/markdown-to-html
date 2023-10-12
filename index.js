@@ -9,6 +9,7 @@ const yaml = require('js-yaml');
 const showdown  = require('showdown');
 const showdownHighlight = require('showdown-highlight');
 const { PurgeCSS } = require('purgecss');
+showdown.setFlavor('github');
 showdown.setOption('tables', true);
 showdown.setOption('tablesHeaderId', true);
 showdown.setOption('tasklists', true);
@@ -21,7 +22,6 @@ showdown.setOption('parseImgDimensions', true);
 showdown.setOption('requireSpaceBeforeHeadingText', true);
 showdown.setOption('splitAdjacentBlockquotes', true);
 showdown.setOption('ghCompatibleHeaderId', true);
-showdown.setFlavor('github');
 
 const codeCSS = fs.readFileSync('./css/atom-one-dark.min.css', 'utf8');
 const baseCSS = fs.readFileSync('./css/cnp.css', 'utf8');
@@ -108,6 +108,26 @@ function applyCustomClasses(html, classMap) {
 
     return $.html();
 }
+
+// Add custom class:
+/* Examples:
+    #[.header] Content title
+    [.pTag line]Content description
+*/
+const customClassExtension = {
+    type: 'output',
+    filter: function (text) {
+        return text
+            .replace(/<p>\[\.([a-z0-9A-Z\s]+)\]<\/p>[\n]?<(.+)>/g, `<$2 class="$1">`)
+            .replace(/<(.+)>\[\.([a-z0-9A-Z\s]+)\]/g, `<$1 class="$2">`)
+            .replace(/class="(.+)"/g, function (str) {
+                if (str.indexOf("<em>") !== -1) {
+                    return str.replace(/<[/]?em>/g, '_');
+                }
+                return str;
+            });
+    }
+};
 
 const loadPreset = (presetName) => {
     try {
@@ -207,6 +227,7 @@ const converter = new showdown.Converter({
             pre: true,
             auto_detection: true
         }),
+        customClassExtension
     ]
 });
 
