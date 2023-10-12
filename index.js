@@ -22,7 +22,6 @@ showdown.setOption('parseImgDimensions', true);
 showdown.setOption('requireSpaceBeforeHeadingText', true);
 showdown.setOption('splitAdjacentBlockquotes', true);
 showdown.setOption('ghCompatibleHeaderId', true);
-showdown.setOption('customizedHeaderId', true);
 showdown.setFlavor('github');
 
 const codeCSS = fs.readFileSync('./css/atom-one-dark.min.css', 'utf8');
