@@ -6,9 +6,9 @@
 
     "code": "regular-text",
 
-    "table": "full-width",
-    "tr": "list-row medium-text",
-    "th": "bold medium-text",
+    "table": "full-width no-border no-border-radius no-padding",
+    "tr": "list-row medium-text no-background no-border no-border-radius no-padding",
+    "th": "bold medium-text no-background no-border no-border-radius no-padding",
 
     "ol": "list-row gap-col-2 gap-row-1"
 }

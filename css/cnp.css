@@ -117,6 +117,36 @@ ul {
     padding-left: calc(1.8 * var(--font-size));
 }
 
+table {
+    width: 100%;
+
+    border: 1px solid rgb(72,72,72);
+    border-radius: calc(0.4 * var(--font-size));
+    border-spacing: 0;
+    overflow: hidden;
+
+}
+th, td {
+    text-align: left;
+    padding: calc(0.5 * var(--font-size)) calc(0.8 * var(--font-size));
+    border-bottom: 1px solid rgb(72,72,72);
+}
+th {
+    /* distictive background, extra size 1.2 * font */
+    background-color: rgb(52,52,52);
+    color: rgb(205,205,205);
+    font-size: calc(1.2 * var(--font-size));
+
+}
+tr:nth-child(even) {
+    background-color: rgb(34,34,34);
+}
+tr:hover {
+    background-color: rgb(72,72,72);
+}
+
+
+
 /* Progress bar */
 .progress-header {
     position: fixed;
@@ -219,8 +249,17 @@ ul {
     margin-bottom: 0.5rem;
 }
 
+.no-padding {
+    padding: 0;
+}
 .no-border {
     border: none;
+}
+.no-background {
+    background-color: transparent;
+}
+.no-border-radius {
+    border-radius: 0;
 }
 
 .dim {
