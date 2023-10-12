@@ -8,7 +8,6 @@ const cheerio = require('cheerio');
 const yaml = require('js-yaml');
 const showdown  = require('showdown');
 const showdownHighlight = require('showdown-highlight');
-const xssFilter = require('showdown-xss-filter');
 const { PurgeCSS } = require('purgecss');
 showdown.setOption('tables', true);
 showdown.setOption('tablesHeaderId', true);
@@ -208,7 +207,6 @@ const converter = new showdown.Converter({
             pre: true,
             auto_detection: true
         }),
-        xssFilter,
     ]
 });
 
@@ -222,6 +220,7 @@ options.input.forEach(async file => {
     const text = fs.readFileSync(file.filename, 'utf8');
     let html = converter.makeHtml(text);
     html = template.replace('{{BODY}}', html);
+    html = applyCustomClasses(html, classMap);
     
     // purge css
     const purgedBaseCSS = await new PurgeCSS().purge({
@@ -241,6 +240,15 @@ options.input.forEach(async file => {
 
     // Add CSS in <style> tag at the top of <head>
     css = `<style>${purgedBaseCSS}</style><style>${codeCSS}</style>`;
+    
+    // Update the title, description, image, and url with the preset values
+    // {{TITLE}}, {{DESCRIPTION}}, {{IMAGE}}, {{URL}}
+    html = html.replaceAll('{{TITLE}}', presetFile.TITLE || "Untitled");
+    html = html.replaceAll('{{DESCRIPTION}}', presetFile.DESCRIPTION || "No description.");
+    html = html.replaceAll('{{IMAGE}}', presetFile.IMAGE || "");
+    html = html.replaceAll('{{URL}}', presetFile.URL || "");
+    
+    // Add the HTML to the base template
 
     // Add font:
     const font = `
@@ -251,18 +259,7 @@ options.input.forEach(async file => {
 
     // Add CSS to <head> by replace </head> tag
     html = html.replace('</head>', `${font}${css}</head>`);
-
-    // Update the title, description, image, and url with the preset values
-    // {{TITLE}}, {{DESCRIPTION}}, {{IMAGE}}, {{URL}}
-    html = html.replaceAll('{{TITLE}}', presetFile.TITLE || "Untitled");
-    html = html.replaceAll('{{DESCRIPTION}}', presetFile.DESCRIPTION || "No description.");
-    html = html.replaceAll('{{IMAGE}}', presetFile.IMAGE || "");
-    html = html.replaceAll('{{URL}}', presetFile.URL || "");
-
-    // Add the HTML to the base template
     
-    html = applyCustomClasses(html, classMap);
-
     // Write to file
     const outputFilename = file.filename.split('.').slice(0, -1).join('.') + '.html';
     fs.writeFileSync(outputFilename, html);

@@ -25,7 +25,6 @@
     "purgecss": "^5.0.0",
     "showdown": "^2.1.0",
     "showdown-highlight": "^3.1.0",
-    "showdown-xss-filter": "^0.2.0",
-    "xss": "^1.0.14"
+    "showdown-xss-filter": "^0.2.0"
   }
 }
