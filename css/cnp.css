@@ -8,7 +8,7 @@ body {
     margin: calc(3.5 * var(--font-size)) 16vw;
     background-color: #1a1a1a;
     font-family: 'K2D', sans-serif;
-    color: rgba(255, 255, 255, 0.78);
+    color: rgb(205,205,205);
     scrollbar-gutter: stable both-edges;
 
     font-size: var(--font-size);
@@ -21,20 +21,20 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(49,49,49);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.35);
+    background: rgb(106,106,106);
     border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.55);
+    background: rgb(152,152,152);
 }
 
 ::-webkit-scrollbar-corner {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(49,49,49);
 }
 
 code {
@@ -96,14 +96,14 @@ img {
 }
 
 h1 {
-    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 3px solid rgb(95,95,95);
     padding-bottom: 1rem;
 
     font-size: calc(2.2 * var(--font-size));
 }
 
 h2 {
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgb(72,72,72);
     padding-bottom: 0.8rem;
 
     font-size: calc(1.8 * var(--font-size));
@@ -115,6 +115,28 @@ h3 {
 
 ul {
     padding-left: calc(1.8 * var(--font-size));
+}
+
+/* Progress bar */
+.progress-header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.progress-container {
+    background-color: rgb(49,49,49,0.5);
+    height: 4px;
+    width: 100%;
+}
+
+.progress-bar {
+    background-color: rgba(154, 175, 214,0.9);
+    height: 4px;
+    width: 0%;
+    border-radius: 4px;
 }
 
 
