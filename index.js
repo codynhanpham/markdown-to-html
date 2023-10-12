@@ -7,11 +7,22 @@ const commandLineArgs = require('command-line-args');
 const cheerio = require('cheerio');
 const yaml = require('js-yaml');
 const showdown  = require('showdown');
-const showdownHighlight = require("showdown-highlight");
+const showdownHighlight = require('showdown-highlight');
+const xssFilter = require('showdown-xss-filter');
+const { PurgeCSS } = require('purgecss');
 showdown.setOption('tables', true);
+showdown.setOption('tablesHeaderId', true);
 showdown.setOption('tasklists', true);
+showdown.setOption('emoji', true);
 showdown.setOption('strikethrough', true);
+showdown.setOption('underline', true);
 showdown.setOption('simpleLineBreaks', true);
+showdown.setOption('openLinksInNewWindow', true);
+showdown.setOption('parseImgDimensions', true);
+showdown.setOption('requireSpaceBeforeHeadingText', true);
+showdown.setOption('splitAdjacentBlockquotes', true);
+showdown.setOption('ghCompatibleHeaderId', true);
+showdown.setOption('customizedHeaderId', true);
 showdown.setFlavor('github');
 
 const codeCSS = fs.readFileSync('./css/atom-one-dark.min.css', 'utf8');
@@ -165,8 +176,8 @@ if (options.classmap) {
 
 
 // APPLICATION
-const presetFile = loadPreset(options.preset.name);
 
+const presetFile = loadPreset(options.preset.name);
 let classMap = presetFile.class_map_dir ? JSON.parse(fs.readFileSync(presetFile.class_map_dir, 'utf8')) : {};
 
 // Use the classMap argument if it exists --> override the preset
@@ -198,12 +209,13 @@ const converter = new showdown.Converter({
             pre: true,
             auto_detection: true
         }),
+        xssFilter,
     ]
 });
 
 // Read the files and convert to HTML
 console.log();
-options.input.forEach(file => {
+options.input.forEach(async file => {
     const dateTime = new Date().toISOString().replace(/T/, ', ').replace(/\..+/, '');
     const dateTimeComment = `<!-- Generated on ${dateTime} -->\n`;
 
@@ -211,9 +223,25 @@ options.input.forEach(file => {
     const text = fs.readFileSync(file.filename, 'utf8');
     let html = converter.makeHtml(text);
     html = template.replace('{{BODY}}', html);
+    
+    // purge css
+    const purgedBaseCSS = await new PurgeCSS().purge({
+        content: [
+            {
+                raw: html,
+                extension: 'html',
+            },
+        ],
+        css: [
+            {
+                raw: baseCSS,
+                extension: 'css',
+            },
+        ],
+    }).then(result => result[0].css);
 
     // Add CSS in <style> tag at the top of <head>
-    let css = `<style>${baseCSS}</style><style>${codeCSS}</style>`;
+    css = `<style>${purgedBaseCSS}</style><style>${codeCSS}</style>`;
 
     // Add font:
     const font = `

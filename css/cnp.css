@@ -1,7 +1,7 @@
 /* variables */
 /* font-size */
 :root {
-    --font-size: clamp(0.6875rem, 0.5136rem + 1.0303vw, 1.75rem);
+    --font-size: clamp(0.75rem, 0.5864rem + 0.9697vw, 1.75rem); /* 12px - 28px */
 }
 
 body {
