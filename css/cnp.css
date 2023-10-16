@@ -49,6 +49,7 @@ a {
     text-decoration: none;
     display: inline-block;
     position: relative;
+    overflow-wrap: anywhere;
 }
 
 a:hover {
